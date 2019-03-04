@@ -1,0 +1,248 @@
+
+
+.scrtabs-tab-scroll-arrow-left {
+	background: url(../../img/dark-prev-arrow.png) left top no-repeat;
+	position: absolute;
+	right: 38px;
+	top: 10px;
+	z-index: 1;
+}
+
+.scrtabs-tab-scroll-arrow-right {
+	background: url(../../img/dark-next-arrow.png) right top no-repeat;
+	position: absolute;
+	right: 15px;
+	top: 10px;
+}
+
+.scrolling-tabs .nav>li>a {
+	position: relative;
+	display: block;
+	padding: 5px 15px;
+}
+
+.scrolling-tabs .nav-tabs>li a {
+	width: 40px;
+	height: 40px;
+	line-height: 32px;
+	text-align: center;
+	padding: 5px;
+	margin: 0 8px 0 8px;
+	font-size: 12px;
+	font-weight: 600;
+	color: #666;
+	border: 0;
+	background: url(../../img/color-round.png) center top no-repeat;
+}
+
+.scrolling-tabs .nav-tabs>li a.active {
+	width: 40px;
+	height: 41px;
+	line-height: 32px;
+	text-align: center;
+	padding: 5px;
+	margin: 0 8px 0 8px;
+	font-size: 12px;
+	font-weight: 600;
+	color: #fff;
+	border: 0;
+	background: url(../../img/color-round-active.png) center top no-repeat;
+}
+
+.scrolling-tabs .nav {
+	margin-bottom: 0;
+	padding-left: 0;
+	list-style: none
+}
+
+.scrolling-tabs .nav>li {
+	position: relative;
+	display: block
+}
+
+.scrolling-tabs .nav>li>a {
+	position: relative;
+	display: block;
+	padding: 11px 11px
+}
+
+.scrolling-tabs .nav>li>a:hover,
+.scrolling-tabs .nav>li>a:focus {
+	text-decoration: none;
+	background-color: #eee
+}
+
+.scrolling-tabs .nav>li.disabled>a {
+	color: #999
+}
+
+.scrolling-tabs .nav>li.disabled>a:hover,
+.scrolling-tabs .nav>li.disabled>a:focus {
+	color: #999;
+	text-decoration: none;
+	background-color: transparent;
+	cursor: not-allowed
+}
+
+.scrolling-tabs .nav .open>a,
+.scrolling-tabs .nav .open>a:hover,
+.scrolling-tabs .nav .open>a:focus {
+	background-color: #eee;
+	border-color: #428bca
+}
+
+.scrolling-tabs .nav .nav-divider {
+	height: 1px;
+	margin: 9px 0;
+	overflow: hidden;
+	background-color: #e5e5e5
+}
+
+.scrolling-tabs .nav>li>a>img {
+	max-width: none
+}
+
+.scrolling-tabs .nav-tabs {
+	/*border-bottom: 1px solid #ddd*/
+}
+
+.scrolling-tabs .nav-tabs>li {
+	float: left;
+	margin-bottom: -1px
+}
+
+.scrolling-tabs .nav-tabs>li>a {
+	line-height: 1.42857143;
+	/*border: 1px solid transparent;
+	border-radius: 4px 4px 0 0*/
+}
+
+.scrolling-tabs .nav-tabs>li>a:hover {
+	border-color: #eee #eee #ddd
+}
+
+.scrolling-tabs .nav-tabs>li.active>a,
+.scrolling-tabs .nav-tabs>li.active>a:hover,
+.scrolling-tabs .nav-tabs>li.active>a:focus {
+	/*color: #555;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-bottom-color: transparent;
+	cursor: default*/
+}
+
+.scrolling-tabs .nav-tabs.nav-justified>.dropdown .dropdown-menu {
+	top: auto;
+	left: auto
+}
+
+@media (min-width:768px) {
+	.scrolling-tabs .nav-tabs.nav-justified>li {
+		display: table-cell;
+		width: 1%
+	}
+	.scrolling-tabs .nav-tabs.nav-justified>li>a {
+		margin-bottom: 0
+	}
+}
+
+.scrolling-tabs .nav-tabs.nav-justified>li>a {
+	margin-right: 0;
+	border-radius: 4px
+}
+
+.scrolling-tabs .nav-tabs.nav-justified>.active>a,
+.scrolling-tabs .nav-tabs.nav-justified>.active>a:hover,
+.scrolling-tabs .nav-tabs.nav-justified>.active>a:focus {
+	border: 1px solid #ddd
+}
+
+@media (min-width:768px) {
+	.scrolling-tabs .nav-tabs.nav-justified>li>a {
+		border-bottom: 1px solid #ddd;
+		border-radius: 4px 4px 0 0
+	}
+	.scrolling-tabs .nav-tabs.nav-justified>.active>a,
+	.scrolling-tabs .nav-tabs.nav-justified>.active>a:hover,
+	.scrolling-tabs .nav-tabs.nav-justified>.active>a:focus {
+		border-bottom-color: #fff
+	}
+}
+
+.scrolling-tabs .nav-stacked>li {
+	float: none
+}
+
+.scrolling-tabs .nav-stacked>li+li {
+	margin-top: 2px;
+	margin-left: 0
+}
+
+.scrolling-tabs .nav-justified {
+	width: 100%
+}
+
+.scrolling-tabs .nav-justified>li {
+	float: none
+}
+
+.nav-justified>li>a {
+	text-align: center;
+	margin-bottom: 5px
+}
+
+.scrolling-tabs .nav-justified>.dropdown .dropdown-menu {
+	top: auto;
+	left: auto
+}
+
+.scrolling-tabs .tab-content>.tab-pane {
+	display: none
+}
+
+.scrolling-tabs .tab-content>.active {
+	display: block
+}
+
+.scrolling-tabs .nav-tabs .dropdown-menu {
+	margin-top: -1px;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0
+}
+
+.scrolling-tabs .navbar {
+	position: relative;
+	min-height: 50px;
+	margin-bottom: 20px;
+	border: 1px solid transparent
+}
+
+.scrolling-tabs .nav-tabs,
+.tab-content {
+	display: none;
+}
+
+.st-demo-header {
+	background-color: #666666;
+	color: white;
+	font-size: 24px;
+	padding: 8px 24px;
+}
+
+.st-demo-header button {
+	color: black;
+	font-size: 12px;
+}
+
+.st-demo-subheader {
+	background-color: #f0f0f0;
+	color: #333;
+	font-size: 16px;
+	height: 65px;
+	margin-top: 50px;
+	padding: 8px 24px;
+}
+
+.st-demo-subheader:first-child {
+	margin-top: 0;
+}

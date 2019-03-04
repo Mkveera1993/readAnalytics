@@ -1,0 +1,160 @@
+[
+    {
+        "question_path": "Which of the following is not an event in ancient Indian history in BC era?",  
+        "options":{
+            "A":"Foundation of the Indo-Greek empire",
+            "B":"Beginning of Vikram samvat Era",
+            "C":"Fourth Buddhist Council",
+            "D":"Hathigumpha inscription by Kharvela"
+        },      
+        "remember":"Yes",
+        "difficulty": 1,
+        "correct_ans": "C",
+        "near_correct":"D"
+    },
+    {
+        "question_path": "Which of the following was most probably the first metal to be used in India?",
+        "options":{
+            "A":"Iron",
+            "B":"Copper",
+            "C":"Gold",
+            "D":"Silver"
+        },         
+        "remember":"No",
+        "difficulty": 2,
+        "correct_ans": "B",
+        "near_correct":"C"
+    },
+    {
+        "question_path": "Which of the following terms is not associated with a tool tradition of ancient India / World?",        
+        "options":{
+            "A":"Mousterian",
+            "B":"Acheulean",
+            "C":"Oldowan",
+            "D":"Grotian"
+        },
+        "remember":"Yes",
+        "difficulty": 3,
+        "correct_ans": "D",
+        "near_correct":"A"
+    },
+    {
+        "question_path": "In stone age, the Microliths were most commonly found in which of the following ages?",        
+        "options":{
+            "A":"Paleolithic",
+            "B":"Mesolithic",
+            "C":"Neolithic",
+            "D":"Chalcolithic"
+        },
+        "remember":"Yes",
+        "difficulty": 3,
+        "correct_ans": "B",
+        "near_correct":"A"
+    },
+    {
+        "question_path": "In stone age, the Microliths were most commonly found in which of the following ages?",        
+        "options":{
+            "A":"Paleolithic",
+            "B":"Mesolithic",
+            "C":"Neolithic",
+            "D":"Chalcolithic"
+        },
+        "remember":"Yes",
+        "difficulty": 3,
+        "correct_ans": "B",
+        "near_correct":"A"
+    },
+    {
+        "question_path": "Which of the following is not an event in ancient Indian history in BC era?",  
+        "options":{
+            "A":"Foundation of the Indo-Greek empire",
+            "B":"Beginning of Vikram samvat Era",
+            "C":"Fourth Buddhist Council",
+            "D":"Hathigumpha inscription by Kharvela"
+        },      
+        "remember":"Yes",
+        "difficulty": 1,
+        "correct_ans": "C",
+        "near_correct":"D"
+    },
+    {
+        "question_path": "Which of the following was most probably the first metal to be used in India?",
+        "options":{
+            "A":"Iron",
+            "B":"Copper",
+            "C":"Gold",
+            "D":"Silver"
+        },         
+        "remember":"No",
+        "difficulty": 2,
+        "correct_ans": "B",
+        "near_correct":"C"
+    },
+    {
+        "question_path": "Which of the following terms is not associated with a tool tradition of ancient India / World?",        
+        "options":{
+            "A":"Mousterian",
+            "B":"Acheulean",
+            "C":"Oldowan",
+            "D":"Grotian"
+        },
+        "remember":"Yes",
+        "difficulty": 3,
+        "correct_ans": "D",
+        "near_correct":"A"
+    },
+    {
+        "question_path": "In stone age, the Microliths were most commonly found in which of the following ages?",        
+        "options":{
+            "A":"Paleolithic",
+            "B":"Mesolithic",
+            "C":"Neolithic",
+            "D":"Chalcolithic"
+        },
+        "remember":"Yes",
+        "difficulty": 3,
+        "correct_ans": "B",
+        "near_correct":"A"
+    },
+    {
+        "question_path": "In stone age, the Microliths were most commonly found in which of the following ages?",        
+        "options":{
+            "A":"Paleolithic",
+            "B":"Mesolithic",
+            "C":"Neolithic",
+            "D":"Chalcolithic"
+        },
+        "remember":"Yes",
+        "difficulty": 3,
+        "correct_ans": "B",
+        "near_correct":"A"
+    },
+    {
+        "question_path": "In stone age, the Microliths were most commonly found in which of the following ages?",        
+        "options":{
+            "A":"Paleolithic",
+            "B":"Mesolithic",
+            "C":"Neolithic",
+            "D":"Chalcolithic"
+        },
+        "remember":"Yes",
+        "difficulty": 3,
+        "correct_ans": "B",
+        "near_correct":"A"
+    },
+    {
+        "question_path": "In stone age, the Microliths were most commonly found in which of the following ages?",        
+        "options":{
+            "A":"Paleolithic",
+            "B":"Mesolithic",
+            "C":"Neolithic",
+            "D":"Chalcolithic"
+        },
+        "remember":"Yes",
+        "difficulty": 3,
+        "correct_ans": "B",
+        "near_correct":"A"
+    }
+    
+
+]

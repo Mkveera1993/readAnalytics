@@ -1,0 +1,132 @@
+[
+    {
+        "profile":{
+            "name_first":"Meena",
+            "name_last":"Kumari"
+        },
+        "role":2,
+        "email":"meena.kumari@gmail.com",
+        "username":"MeenaKumari123",
+        "isVerified":true,
+        "password":"Meena@123",
+        "address":"Yashwanthpur,Bangalore"
+
+    },
+    {
+        "profile":{
+            "name_first":"Ranjith",
+            "name_last":"Kumar"
+        },
+        "role":2,
+        "email":"Ranjith.kumar@gmail.com",
+        "username":"RanjithKumar123",
+        "isVerified":true,
+        "password":"Ranjith@123",
+        "address":"Malleshwaram,Bangalore"
+
+    },
+    {
+        "profile":{
+            "name_first":"Veera",
+            "name_last":"Mani"
+        },
+        "role":1,
+        "email":"veera.mani@gmail.com",
+        "username":"VeeraMani123",
+        "isVerified":true,
+        "address":"Yashwanthpur,Bangalore",
+        "password":"Veera@123"
+
+    },
+    {
+        "profile":{
+            "name_first":"Mani",
+            "name_last":"Vannan"
+        },
+        "role":1,
+        "email":"mani.vannan@gmail.com",
+        "username":"ManiVannan123",
+        "isVerified":true,        
+        "password":"Mani@123",
+        "address":"Vadapalani,Chennai"
+
+    },
+    {
+        "profile":{
+            "name_first":"Lakshmi",
+            "name_last":"Rai"
+        },
+        "role":1,
+        "email":"lak.rai@gmail.com",
+        "username":"LakshmiRai123",
+        "isVerified":true,        
+        "password":"LakshmiRai@123",
+        "address":"Vadapalani,Delhi"
+
+    },
+    {
+        "profile":{
+            "name_first":"Sachin",
+            "name_last":"Tendulkar"
+        },
+        "role":1,
+        "email":"sachin.tendulkar@gmail.com",
+        "username":"Sachin123",
+        "isVerified":true,        
+        "password":"Sachin@123",
+        "address":"Dharavi,Mumbai"
+
+    },
+    {
+        "profile":{
+            "name_first":"Virat",
+            "name_last":"Kohli"
+        },
+        "role":1,
+        "email":"virat.kohli@gmail.com",
+        "username":"Virat123",
+        "isVerified":true,        
+        "password":"Virat@123",
+        "address":"Villuppuram,Delhi"
+
+    },
+    {
+        "profile":{
+            "name_first":"Rohit",
+            "name_last":"Sharma"
+        },
+        "role":1,
+        "email":"rohit.sharma@gmail.com",
+        "username":"Rohit123",
+        "isVerified":true,        
+        "password":"Rohit@123",
+        "address":"lakno,Gujarat"
+
+    },
+    {
+        "profile":{
+            "name_first":"Nayan",
+            "name_last":"Thara"
+        },
+        "role":1,
+        "email":"nayan.thara@gmail.com",
+        "username":"Nayan123",
+        "isVerified":true,        
+        "password":"Nayan@123",
+        "address":"Kadapa,Andhra"
+
+    },
+    {
+        "profile":{
+            "name_first":"Ragina",
+            "name_last":"Cassandra"
+        },
+        "role":1,
+        "email":"regina.cassandra@gmail.com",
+        "username":"Regina123",
+        "isVerified":true,        
+        "password":"Regina@123",
+        "address":"Bangalore,Karanataka"
+
+    }
+]

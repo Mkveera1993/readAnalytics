@@ -1,0 +1,21 @@
+[
+    {
+        "school_code": "KK06314",
+        "school_name": "Kendriya Vidyalaya",
+        "state": "Karnataka",
+        "district": "Bangalore"
+    },
+    {
+        "school_code": "KK06304",
+        "school_name": "National Public School",
+        "state": "Karnataka",
+        "district": "Bangalore"
+    },
+    {
+        "school_code": "KK06389",
+        "school_name": "Vidyaniketan Public School",
+        "state": "Karnataka",
+        "district": "Bangalore"
+    }
+
+]

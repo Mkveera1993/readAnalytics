@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html ng-app="readAnalytics">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Read Analytics : A6 Session Details</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome CSS-->
+  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+  <!-- Google fonts - Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900">
+  <!-- theme stylesheet-->
+  <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+  <!-- Custom stylesheet - for your changes-->
+  <link rel="stylesheet" href="css/custom.css">
+  <!-- Layout stylesheet - for your changes-->
+  <link rel="stylesheet" href="css/layout.css">
+  <!-- Meida stylesheet - for your changes-->
+  <link rel="stylesheet" href="css/media.css">
+  <link rel="stylesheet" href="css/all.css">
+
+  <!-- Favicon-->
+  <link rel="shortcut icon" href="favicon.png">
+  <!-- Tweaks for older IEs-->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  <base href="/" />
+</head>
+
+<body ng-controller="mainController" ng-cloak>
+  <div class="page home-page">
+    <!-- Main Navbar-->
+    <div class="page-content d-flex align-items-stretch">
+      <!-- Side Navbar -->
+      <nav class="side-navbar" style="height: 800px;">
+        <!-- Sidebar Header-->
+        <div class="sidebar-header d-flex align-items-center">
+          <div class="pr-1"><img src="img/left-sidebar-icons/logo.png" alt="" class="size" /></div>
+          <div class="read-analytics">{{title}}</div>
+        </div>
+        <!-- Sidebar Navidation Menus-->
+        <div class="avatar" >
+          <div class="header">
+            <nav class="navbar">
+              <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+              </div>
+            </nav>
+          </div>
+          <img src="img/user-profile-pic.jpg" alt="" class="rounded-circle round" />
+        </div>
+        <div class="title">
+          <h1 class="h4">{{user.profile.name_first}} {{user.profile.name_last}}</h1>
+           <p>{{user.userRole}}</p>
+        </div>
+        <ul class="list-unstyled" ng-if="isLogged">
+          <li> <a href="students_dashboard.html"><img src="img/left-sidebar-icons/dashboard.png" class="hiddenNone" alt="Dashboard">Dashboard</a></li>
+          <li> <a href="A2_session_attendance.html"><img src="img/left-sidebar-icons/attendance.png" class="hiddenNone"
+                alt="Attendance" /> Attendance </a></li>
+          <li> <a href="A4_performance.html"><img src="img/left-sidebar-icons/performance.png" class="hiddenNone" alt="Performance" />
+              Performance </a></li>
+          <li class="active"> <a href="session.html"><img src="img/left-sidebar-icons/session.png" class="hiddenNone"
+                alt="Session" /> Session </a></li>
+          <li> <a href="A7_students.html"><img src="img/left-sidebar-icons/students.png" class="hiddenNone" alt="Students" />
+              Students </a></li>
+          <li> <a href="reports_teacher.html"><img src="img/left-sidebar-icons/reports.png" class="hiddenNone" alt="Reports" />
+              Reports </a></li>
+        </ul>
+        <div class="footer-bottom">
+          <ul class="list-unstyled">
+            <li ng-if="!isLogged" data-toggle="modal" data-target="#myModal"> <a href="/"><img src="img/left-sidebar-icons/logout.png" class="hiddenNone" alt="Login" />
+                Login</a></li>
+            <li ng-if="isLogged"> <a ng-click="logout()"><img src="img/left-sidebar-icons/logout.png" class="hiddenNone"
+                  alt="Logout" /> Logout</a></li>
+          </ul>
+          <div class="footer-copyright">
+            <p class="copyright">2018 &copy; Read analytics</p>
+          </div>
+        </div>
+      </nav>
+      <div class="content-inner text-center" ng-if="!isLogged" style="margin-top: 200px"><h1>Please Login</h1></div>
+      <div class="content-inner" ng-if="isLogged" >
+        <!-- Page Header-->
+        <header class="page-header">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-6 col-5 col-sm-6">
+                <h2 class="no-margin-bottom py-2 top-page-title">Session <a href="#" class="px-3"><i class="fa fa-angle-right arrow-small-font"
+                      aria-hidden="true"></i></a> <span>{{currentSession}}</span> </h2>
+              </div>
+              <div class="col-lg-6 col-5 col-sm-5 text-right"><a href="#"><img src="/img/poornaprajnap-college.png" alt="Poornaprajna College And Post Graduate Center"
+                    width="100%" /></a></div>
+            </div>
+          </div>
+        </header>
+        <!-- Session Section -->
+        <div class="A6-session_details"  >
+          <section class="session-one no-padding-bottom">
+            <div class="container-fluid">
+              <div class="bg-white has-shadow py-3 px-3">
+                <div class="row">
+                  <div class="col-lg-9 col-12 col-sm-6">
+                    <div class="session-slide-div"> <span id="next" ng-click="prevSession(currentSession)"><img src="/img/prev-arrow.png"
+                          alt="Next" /></span>
+                      <!--<i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>-->
+                      <span class="session-slide"> <span class="s-number">{{currentSession}}</span></span> <span id="prev"
+                        ng-click="nextSession(currentSession)"><img src="../../img/next-arrow.png" alt="Prev" /></span>
+                      <!--<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>-->
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-12 col-sm-6">
+                    <!--  <div class="col-lg-7 col-12 col-sm-6 text-right"> <span><img src="img/clock-icon.png" alt="Clock" /></span> <span class="time">08:30 am - 09:20am</span> </div> -->
+                    <div class="session-calender-slider"> <span id="next1" ng-click="prevDay()"><img src="/img/prev-arrow.png"
+                          alt="Next" style="opacity:0.5" /></span> <span class="session-calender">
+                        <input type="text" id="datepicker" ng-model="currentDate" ng-value="currentDate|date:'dd-MM-yyyy'"
+                          class="dd-mm-yyyy" />
+                      </span> <span id="prev1" ng-click="nextDay()"><img src="/img/next-arrow.png" alt="Prev" style="opacity:0.5" /></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Dynamical Systems Section -->
+          <section class="session-one no-padding-bottom">
+            <div class="container-fluid">
+              <div class="bg-white has-shadow py-3 px-3">
+                <div class="row">
+                  <div class="col-lg-8 col-12 col-sm-8">
+                    <div class="dynamical-systems"> {{currentSessionDetails.title}} <a href="#" class="view-performance">
+                        View Performance</a> </div>
+                    <div class="pt-2"> <span class="gery-box" ng-repeat="key in sessionKeys" ng-click="changeSession(key)">{{key}}</span></div>
+                  </div>
+                  <div class="col-lg-4 col-12 col-sm-4">
+                    <div class="row">
+                      <div class="col-lg-4 col-4 col-sm-4 py-2 text-center"><img src="/img/read-velocity.png" alt="Read Velocity" /><br />
+                        <span class="read-velocity">Read Velocity</span></div>
+                      <div class="col-lg-4 col-4 col-sm-4">
+                        <div class="light-gery-box">
+                          <div class="number">{{totalSession}}</div>
+                          <div class="tagline">Session</div>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-4 col-sm-4">
+                        <div class="light-gery-box">
+                          <div class="number">{{totalTopic}}</div>
+                          <div class="tagline">Topic</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row py-3">
+                  <div class="col-lg-12 col-md-12 col-sm-12 divider"></div>
+                </div>
+                <div class="row" ng-if="currentSessionDetails.type=='studio'">
+                  <div class="col-lg-2 col-12 col-sm-2">
+                    <div class="studio-session"> <img src="img/studio.png" alt="Studio Session" class="img" /> <span
+                        class="studio-session-txt">Studio<br />
+                        Session</span> </div>
+                  </div>
+                  <div class="col-lg-10 col-12 col-sm-10">
+                    <div class="row">
+                      <div class="col-lg-2 col-sm-2 col-6"> <span class="custom-sm-fnt">Class</span><br />
+                        <span class="custom-lg-fnt">{{currentSessionDetails.for_class}}</span> </div>
+                      <div class="col-lg-2 col-sm-2 col-6"> <span class="custom-sm-fnt">Subject</span><br />
+                        <span class="custom-lg-fnt">{{currentSessionDetails.subject}}</span> </div>
+                      <div class="col-lg-2 col-sm-2 col-6"> <span class="custom-sm-fnt">Sub Subject</span><br />
+                        <span class="custom-lg-fnt">{{currentSessionDetails.sub_subject}}</span> </div>
+                      <div class="col-lg-2 col-sm-2 col-6"> <span class="custom-sm-fnt">Studio</span><br />
+                        <span class="custom-lg-fnt">{{currentSessionDetails.studio_name}}</span> </div>
+                      <div class="col-lg-2 col-sm-2 col-6"> <span class="custom-sm-fnt">Studio Teacher</span><br />
+                        <span class="custom-lg-fnt">{{currentSessionDetails.studio_teacher.name_first}}
+                          {{currentSessionDetails.studio_teacher.name_last}}</span> </div>
+                      <div class="col-lg-2 col-sm-2 col-6"> <span class="custom-sm-fnt">Time</span><br />
+                        <span class="custom-lg-fnt">{{currentSessionDetails.start_time|date:'hh:mm a'}} -
+                          {{currentSessionDetails.end_time|date:'hh:mm a'}}</span> </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row" ng-if="currentSessionDetails.type=='class'">
+                  <div class="col-lg-2 col-12 col-sm-2">
+                    <div class="studio-session"> <img src="img/studio.png" alt="Class Session" class="img" /> <span
+                        class="studio-session-txt">Class<br />
+                        Session</span> </div>
+                  </div>
+                  <div class="col-lg-10 col-12 col-sm-10">
+                    <div class="row">
+                      <div class="col-lg-2 col-sm-2 col-6"> <span class="custom-sm-fnt">Class</span><br />
+                        <span class="custom-lg-fnt">{{currentSessionDetails.for_class}}</span> </div>
+                      <div class="col-lg-2 col-sm-2 col-6"> <span class="custom-sm-fnt">Subject</span><br />
+                        <span class="custom-lg-fnt">{{currentSessionDetails.subject}}</span> </div>
+                      <div class="col-lg-2 col-sm-2 col-6"> <span class="custom-sm-fnt">Sub Subject</span><br />
+                        <span class="custom-lg-fnt">{{currentSessionDetails.sub_subject}}</span> </div>
+                      <div class="col-lg-2 col-sm-2 col-6"> <span class="custom-sm-fnt">School</span><br />
+                        <span class="custom-lg-fnt">{{currentSessionDetails.school_code}}</span> </div>
+                      <div class="col-lg-2 col-sm-2 col-6"> <span class="custom-sm-fnt">Class Teacher</span><br />
+                        <span class="custom-lg-fnt">{{currentSessionDetails.class_teacher.name_first}}
+                          {{currentSessionDetails.class_teacher.name_last}}</span> </div>
+                      <div class="col-lg-2 col-sm-2 col-6"> <span class="custom-sm-fnt">Time</span><br />
+                        <span class="custom-lg-fnt">{{currentSessionDetails.start_time|date:'hh:mm a'}} -
+                          {{currentSessionDetails.end_time|date:'hh:mm a'}}</span> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Left and Right Section -->
+          <section class="session-one no-padding-bottom" >
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="scrolling-tabs">
+                    <div class="bg-white has-shadow py-3 px-3">
+                      <div class="row">
+                        <div class="col-lg-2 col-sm-2 col-12"><small class="questionss">Questions </small></div>
+                        <div class="col-lg-10 col-sm-10 col-12 pl-0">
+                          <div class="tab-card-header">
+                            <ul class="nav nav-tabs card-header-tabs" role="tablist" ng-init="questionIndex=1">
+                              <li role="presentation" class="active"><a href="#tab1" role="tab" data-toggle="tab"
+                                  ng-click="changeQuestion(1)">1</a> </li>
+                              <li role="presentation"><a href="#tab2" role="tab" data-toggle="tab" ng-click="changeQuestion(2)">2</a>
+                              </li>
+                              <li role="presentation"><a href="#tab3" role="tab" data-toggle="tab" ng-click="changeQuestion(3)">3</a>
+                              </li>
+                              <li role="presentation"><a href="#tab4" role="tab" data-toggle="tab" ng-click="changeQuestion(4)">4</a>
+                              </li>
+                              <li role="presentation"><a href="#tab5" role="tab" data-toggle="tab" ng-click="changeQuestion(5)">5</a>
+                              </li>
+                              <li role="presentation"><a href="#tab6" role="tab" data-toggle="tab" ng-click="changeQuestion(6)">6</a>
+                              </li>
+                              <li role="presentation"><a href="#tab7" role="tab" data-toggle="tab" ng-click="changeQuestion(7)">7</a>
+                              </li>
+                              <li role="presentation"><a href="#tab8" role="tab" data-toggle="tab" ng-click="changeQuestion(8)">8</a>
+                              </li>
+                              <li role="presentation"><a href="#tab9" role="tab" data-toggle="tab" ng-click="changeQuestion(9)">9</a>
+                              </li>
+                              <li role="presentation"><a href="#tab10" role="tab" data-toggle="tab" ng-click="changeQuestion(10)">10</a>
+                              </li>
+                              <ul>
+                          </div>
+                        </div>
+                      </div>
+                      <hr />
+                      <div class="tab-content" id="myTabContent">
+                        <div>
+                          <div class="row">
+                            <div class="col-lg-2 col-sm-2">
+                              <div class="q4">Q{{questionIndex}}</div>
+                            </div>
+                            <div class="col-lg-10 col-sm-10">
+                              <p>{{currentQuestion.question_path}}</p>
+                              <div class="row">
+                                <div class="col-lg-6 col-sm-6"><img src="img/gandhi.png" alt="" class="img-fluid" /></div>
+                                <div class="col-lg-6 col-sm-6">
+                                  <div class="q-four" ng-repeat="(key,option) in currentQuestion.options"><span class="blue-circle">{{key}}</span>
+                                    {{option}}</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row mt-4">
+                            <div class="col-lg-6 col-sm-6">
+                              <div class="row">
+                                <div class="col-lg-4 col-4 col-sm-4 pr-0">
+                                  <div class="light-blue-box">Remember : {{currentQuestion.remember}}</div>
+                                </div>
+                                <div class="col-lg-4 col-4 col-sm-4 pr-0">
+                                  <div class="light-blue-box">Difficulty : {{currentQuestion.difficulty}}</div>
+                                </div>
+                                <div class="col-lg-4 col-4 col-sm-4">
+                                  <div class="light-blue-box">JEE15</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 text-right"> <img src="img/web-icon.png" alt="" /> <a href="#"
+                                class="anchor-tag">By:{{currentQuestion.asked_by.name}} -
+                                {{currentQuestion.asked_by.address}}</a> <a href="#" class="anchor-tag">Q#
+                                {{currentQuestion.question_key}}</a> </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bg-white has-shadow py-2 px-3 mt-3">
+                    <div class="row">
+                      <div class="col-lg-6 col-sm-6 col-12 brd-right"> <span class="correct-options">Correct Options</span>
+                        <span class="a-green">{{currentQuestion.correct_ans}}</span> </div>
+                      <div class="col-lg-6 col-sm-6 col-12"> <span class="near-correct-options">Near Correct Options</span>
+                        <span class="c-blue">{{currentQuestion.near_correct}}</span> </div>
+                    </div>
+                  </div>
+                  <div class="bg-white has-shadow py-3 px-3 mt-3">
+                    <div class="row">
+                      <div class="col-lg-6 col-sm-6">
+                        <span class="graph-title-left"><img src="img/icons-answers.png" alt="Answer Details" />&nbsp;
+                          Answer Details </span>
+                      </div>
+                      <div class="col-lg-6 col-sm-6">
+                        <div align="right" class="legend">
+                          <a href=""><img src="img/legend-img.png" alt="" />My Class</a>
+                          <a href=""><img src="img/legend-img.png" alt="" />Group</a>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-12 mt-3">
+                        <canvas id="answer_details" style="height: 260px; width: 100%;"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bg-white has-shadow py-3 px-3 mt-3"> <img src="img/raise-hand-sm.png" alt="Raise Hand" /><span
+                      class="graph-title-left">Raise Hand</span>
+                    <div class="clearfix"></div>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <canvas id="hand-raise" style="height: 230px; width: 100%;"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-12 mtop-15">
+                  <div class="bg-white has-shadow py-3 px-3">
+                    <div class="right-sidebar">
+                      <div class="border-btm5">
+                        <div class="row">
+                          <div class="col-lg-3 col-3"><span class="r-n-s-t" style="color:#fc8802;">R#</span> <a href="#"
+                              style="color:#fc8802;"><i class="fa fa-long-arrow-up" aria-hidden="true"></i></a> <a href="#"
+                              style="color:#fc8802;"><i class="fa fa-long-arrow-down" aria-hidden="true"></i></a> </div>
+                          <div class="col-lg-3 col-3"><span class="r-n-s-t">Name</span> <a href="#"><i class="fa fa-long-arrow-up"
+                                aria-hidden="true"></i></a> <a href="#"><i class="fa fa-long-arrow-down" aria-hidden="true"></i></a>
+                          </div>
+                          <div class="col-lg-3 col-3"><span class="r-n-s-t">Session</span> <a href="#"><i class="fa fa-long-arrow-up"
+                                aria-hidden="true"></i></a> <a href="#"><i class="fa fa-long-arrow-down" aria-hidden="true"></i></a>
+                          </div>
+                          <div class="col-lg-3 col-3"><span class="r-n-s-t">Topic</span> <a href="#"><i class="fa fa-long-arrow-up"
+                                aria-hidden="true"></i></a> <a href="#"><i class="fa fa-long-arrow-down" aria-hidden="true"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="content mCustomScrollbar">
+                        <div class="row" ng-repeat="response in currentSessionResponseDetails">
+                          <div class="col-lg-2 col-2 col-sm-1"> <img src="img/avatar-2.jpg" alt="" class="user-picture" /><br />
+                            <div class="text-center"> <a href=""><img src="img/user-bl.png" alt="" /></a><br />
+                              <a href=""><img src="img/rd-hand.png" alt="" /></a> </div>
+                          </div>
+                          <div class="col-lg-10 col-10 col-sm-11">
+                            <div class="number">{{response.usercode}}</div>
+                            <div class="user-name">{{response.student.name_first}} {{response.student.name_last}}</div>
+                            <!-- <div class="square-boxes"> <span class="green-box">&nbsp;</span> <span class="green-box">&nbsp;</span> <span class="green-box">&nbsp;</span> <span class="red-box">&nbsp;</span> <span class="red-box">&nbsp;</span> <span class="red-box">&nbsp;</span> <span class="gery-box0">&nbsp;</span> <span class="blue-box">&nbsp;</span> <span class="gery-box0">&nbsp;</span> <span class="green-box">&nbsp;</span> </div> -->
+                            <div class="square-boxes"> <span class="{{::getClass(answer)}}" ng-repeat="answer in response.answers">&nbsp;</span></div>
+                            <div class="margin-left-none">
+                              <div class="border-top"></div>
+                              <div class="clearfix"> <span class="pull-left"><small class="session">Session</small><small
+                                    class="session-value">{{response.session}}%</small></span> <span class="pull-right"><small
+                                    class="session">Topic</small><small class="session-value">{{response.topic}}%</small></span>
+                              </div>
+                              <div class="pull-left margin-top-minus"><small class="session-value p-0">Velocity icon</small></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- A6-session Details End -->
+        </div>
+        
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header ">
+              <h4 class="modal-title">Login</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-inline" >
+                  <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" ng-model="username">
+                  </div>
+                  <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" ng-model="password">
+                  </div>                                 
+                  <button type="submit" class="btn btn-default" ng-click="login(username,password)">Submit</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+  </div>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="vendor/popper.js/umd/popper.min.js"> </script>
+  <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/Chart.min.js"></script>
+  <script type="text/javascript" src="js/front.js"></script>
+  <script type="text/javascript" src="js/charts/session-details-chart.js"></script>
+
+
+  <!-- Vertical Scrollbar -->
+  <link rel="stylesheet" href="js/scrollbar/jquery.mCustomScrollbar.css" />
+  <script type="text/javascript" src="js/scrollbar/jquery.mCustomScrollbar.js"></script>
+
+  <!-- Date Picker Files -->
+  <link rel="stylesheet" href="js/jquery-ui-datepicker/jquery-ui.css" />
+  <script type="text/javascript" src="js/jquery-ui-datepicker/jquery-ui.js"></script>
+
+  <!-- Angular Dependency -->
+  <script rel="text/javascript" src="vendor/angular/angular.min.js"></script>
+  <script rel="text/javascript" src="vendor/angular/angular-cookies.min.js"></script>
+  <script rel="text/javascript" src="vendor/angular/angular-route.min.js"></script>
+  
+
+  <!-- Angular custom js files -->
+  <script rel="text/javascript" src="js/angularModule.js"></script>
+  <script rel="text/javascript" src="js/angularRoute.js"></script>
+  <script rel="text/javascript" src="services/user.service.js"></script>
+  <script rel="text/javascript" src="services/session.service.js"></script>
+  <script rel="text/javascript" src="js/mainController.js"></script>
+  <script rel="text/javascript" src="views/session/session.controller.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#datepicker").datepicker({
+        showOn: 'button',
+        buttonImage: 'img/calender-icon.png',
+        buttonImageOnly: true,
+        changeMonth: true,
+        changeYear: true,
+        showAnim: 'slideDown',
+        duration: 'fast',
+        dateFormat: 'dd-mm-yy'
+      });
+    });
+  </script>
+
+  <!-- Scrolling Tabs -->
+  <link rel="stylesheet" href="js/tabs-scroll/scrolling.css">
+  <link rel="stylesheet" href="js/tabs-scroll/jquery.scrolling-tabs.css">
+  <script type="text/javascript" src="js/tabs-scroll/jquery.scrolling-tabs.js"></script>
+  <script type="text/javascript" src="js/tabs-scroll/scrolling.js"></script>
+
+  <style type="text/css">
+    .session-calender-slider {
+      float: right;
+    }
+
+    .A6-session_details .session-calender-slider .session-calender input {
+      width: 100px;
+      margin-right: 40px !important;
+    }
+
+    .A6-session_details .session-calender-slider .session-calender {
+      width: 175px !important;
+    }
+
+    .session-calender-slider #prev1 {
+
+      padding-right: 30px;
+      position: absolute;
+      right: 28px;
+    }
+  </style>
+</body>
+
+</html>

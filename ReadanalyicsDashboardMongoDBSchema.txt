@@ -1,0 +1,165 @@
+/**
+ * `Users collection`: Store user's basic and authorization informations
+ * Generic mongodb collection to store User's (student, teacher, principale, district head and state head's ) records
+ * Required only when you want to give full flexibility to end user to control their accounts
+ * @ToDo: Discuss with `Harsha & Team` the above points.
+ **/
+users = {
+  _id: string,
+  user_code: string, // received from computational server when a new user regitered in the app.
+  created_at: Date,
+  profile: {
+    name_first: string,
+    name_last: string
+  },
+  role: UserRole, // If `Account` document is required, then move this property to `Account` document.
+  email: string,
+  isVerified: boolean,
+  username: string,
+  services: {
+    password: string,
+    email: {
+      verificationToken: [
+        {
+          token: string,
+          address: string,
+          when: Date,
+          accountId: string // If `Account` document is required, then keep this property otherwise remove it.
+        }
+      ]
+    }
+  }
+};
+
+/**
+ * `Account collection`: Establish relation between `Users` and `Schools`
+ * @ToDo: Discuss with `Harsha & Team` whether a Teacher/ District Head/ State Head can be part of/see different school's data.
+ * */
+
+accounts = {
+  _id: string,
+  user_code: string,
+  school_code: string, // @Todo: if required add UserRole field here
+  isVerified: boolean,
+  isInactive: boolean
+};
+
+/**
+ * `School Collection`: Store school's informations
+ * @ToDo: find a solutions to create group of `distrcts` which comes under a `state` to display records for `state` and
+ * `distrct` Heads. Either by maintaining a static file which will hold `district` record and keep mapping for `state`.
+ */
+
+schools = {
+  _id: string,
+  school_code: string,
+  school_name: string,
+  state: string,
+  district: string
+};
+
+/**
+ * `Clasess collection`: To store class information, class teacher & enrolled students
+ */
+classess = {
+  _id: string,
+  school_code: string,
+  class_name: string,
+  class_code: string,
+  class_teacher: user_code, // @Todo: handle multiple teacher if required otherwise let it go.
+  students: [user_code] // store enrolled student's IDs in the form of array for a specific class
+};
+
+/**
+ * `Session`: Collection which will keep track of conducted sessions by studio or maybe classroom session
+ */
+
+sessions = {
+  _id: string,
+  session_key: string,
+  start_time: DateTime,
+  end_time: DateTime,
+  session_duration: DateTime,
+  for_class: string,
+  subject: string,
+  sub_subject: string,
+  studio_name: string,
+  studio_teacher: string,
+  question_asked: [question_key] // Array which will keep track of questions asked in a session
+};
+
+/**
+ * `Session Questions`: Collection which will store information of questions asked in a particular session
+ *  If any school missed a session conducted by the studio then this collection will be helpful for them to display
+ *  the questions asked in aparticular session otherwise the `question_asked` field will do the same.
+ */
+
+session_question = {
+  _id: string,
+  session_key: string,
+  questions: [question_key]
+};
+
+/**
+ * `Questions`: collections which will store questions information (one document per question)
+ */
+
+questions = {
+  _id: string,
+  question_key: string,
+  question_path: string,
+  asked_by: string,
+  asked_at: string,
+  remember: string,
+  difficulty: number,
+  correct_ans: string,
+  near_correct: string
+};
+
+/**
+ * `Classroom_session`:  Collection which keeps the sessions record which is recived by the clasess
+ *  @Discuss if any other key exists which we can reuse in this collection
+ */
+
+classroom_session = {
+  _id: string,
+  session_key: string,
+  school_code: string,
+  read_velocity: number,
+  session: number, // session: fields displayed at UI @Discuss
+  topic: number, // topic: fields displayed at UI  @Discuss
+  total_responses: number,
+  attendance: {
+    absent: number,
+    present: number
+  },
+  question_key:
+  students: [userId] // @Discuss
+};
+
+/**
+ * `Classroom_response`: Collection which will keep track of the answers & responses of strudent in a classroom session
+ */
+
+classroom_session_response = {
+  _id: string,
+  session_key: string,
+  school_code: string,
+  class_code: string,
+  user_code: string,
+  answers: [
+    {
+      question_key: {
+        answer: string,
+        raised_hand: boolean,
+        session: number,
+        read_velocity: string,
+        topic: number
+      }
+    },
+    ...{}
+  ],
+  session: number,
+  topic: number,
+  read_velocity: number
+};

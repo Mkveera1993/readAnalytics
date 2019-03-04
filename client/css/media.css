@@ -1,0 +1,421 @@
+
+
+@media (max-width: 768px) {
+	.navbar-header a {
+		position: fixed !important;
+		right: 0px;
+		top: 15px;
+	}
+	nav.navbar .menu-btn span {
+		width: 20px;
+		height: 2px;
+		background: #000;
+	}
+	.mtop-15 {
+		margin-top: 15px;
+	}
+	.calender-box-width {
+		width: 100%;
+		float: none;
+		margin-top: 40px;
+		clear: both;
+		overflow: hidden;
+	}
+	.dashboard-page .graph-series-name {
+		margin-top: 0px;
+	}
+	.dashboard-page h3.user-name {
+		font-size: 20px;
+	}
+	.p-t-10 {
+		padding-top: 15px !important;
+	}
+	#carouselDiv .next {
+		left: 15px;
+	}
+	#carouselDiv .prev {
+		right: 15px;
+	}
+	/*  Dashboard */
+	.home-page .read-analytics {
+		display: none
+	}
+	.dashboard-page .graph-name {
+		font-size: 13px;
+	}
+	.home-page .custom-select-box .select-box-width {
+		margin-right: 10px;
+	}
+	.home-page .dashboard-page .score-graph .questions,
+	.correct,
+	.near-correct,
+	.incorrect,
+	.not-answered {
+		padding: 2px 2px;
+	}
+	.session-calender-slider #prev1,
+	.session-calender-slider #prev {
+		padding-right: 0px;
+		position: relative;
+		right: 13px;
+		top: 1px;
+	}
+	.session-calender-slider #prev {
+		right: 50px !important
+	}
+	.custom-select-box .calender-section {
+		width: 185px;
+	}
+	/*  A2_session_attendance */
+	.A2_session_attendance .attendance-white-box .number {
+		font-size: 20px;
+	}
+	.A2_session_attendance .attendance-white-box .small-tag-line {
+		font-size: 10px;
+	}
+	.A2_session_attendance .orange-box span.title {
+		font-size: 12px;
+	}
+	.A2_session_attendance .white-box span.title,
+	.A2_session_attendance .gery-box span.title {
+		font-size: 13px;
+	}
+	/*  Session */
+	.session-page .calender-box-width {
+		margin-top: 0
+	}
+	.session-page .custom-select-box .select-box-width {
+		margin-right: 10px;
+	}
+	.A2_session_attendance .attendance-white-box img.studio,
+	img.classroom {
+		padding-top: 5px;
+		width: 30px;
+	}
+	/* Reports Teacher */
+	.reports-teacher .col-one,
+	.reports-teacher .col-two,
+	.reports-teacher .col-three,
+	.reports-teacher .col-four,
+	.reports-teacher .col-five,
+	.reports-teacher .col-six,
+	.reports-teacher .col-seven {
+		width: 69px;
+		margin-right: 5px;
+	}
+	.reports-teacher .class-title {
+		font-size: 14px;
+		font-weight: 500;
+	}
+	.reports-summary .subject-section h5 {
+      font-size: 13px;
+      font-weight: 500;
+      padding: 32px 0px;
+	}
+	.reports-summary .subject-section span.number {
+      font-size: 20px;
+	}
+	.reports-summary .subject-section .info-title {
+      font-size: 12px;
+	}
+	.dashboard-page .score-graph-percentage .col-one, .dashboard-page .score-graph-percentage .col-two, .dashboard-page .score-graph-percentage .col-three, 
+	.dashboard-page .score-graph-percentage .col-four, .dashboard-page .score-graph-percentage .col-five {
+      width: 53px;
+	  font-size: 13px;
+	}
+	.dashboard-page .score-graph .questions, .correct, .near-correct, .incorrect, .not-answered {
+      font-size: 9px;
+      text-align: center;
+      padding: 2px 3px;
+    }
+	#myTabLft .nav-tabs .nav-link.active {
+		padding: 0px 10px;
+		font-size: 10px;
+	}
+	#myTabLft .tab-card-header>.nav-tabs>li>a {
+		padding: 0px 10px;
+		font-size: 10px;
+	}
+	#myTabLft .tab-card-header>.nav-tabs>li {
+		margin-right: 3px;
+		margin-left: 3px;
+		padding-top: 5px;
+	}
+	.pad-0 {
+		padding: 0
+	}
+	.hiddenNone {
+		display: none;
+	}
+	.footer-bottom {
+		position: relative;
+		width: auto;
+	}
+	nav.side-navbar a {
+		text-align: left;
+	}
+	.copyright {
+		display: none;
+	}
+}
+
+@media (max-width: 767px) {
+	.navbar-header a {
+		position: fixed !important;
+		right: 0px;
+		top: 15px;
+	}
+	nav.navbar .menu-btn span {
+		width: 20px;
+		height: 2px;
+		background: #000;
+	}
+	.dashboard-page .graph-series-name {
+		margin-top: 0px;
+	}
+	.page-header .text-right {
+		text-align: left !important
+	}
+	.login-page .form-holder .form {
+		padding: 15px;
+	}
+	.custom-select-box .select-box-width {
+		width: 120px;
+		float: left;
+		margin-right: 15px;
+		margin-bottom: 10px;
+	}
+	.custom-select-box .select-box-width.margin-none-mobile {
+		margin-right: 0;
+	}
+	.home-page .custom-select-box .select-box-width {
+		width: 100%;
+	}
+	.custom-select-box .select-box-width {
+		width: 100%;
+		margin-right: 0px;
+		margin-bottom: 10px;
+	}
+	#jIndicatorCanvas {
+		width: 100% !important;
+	}
+	.shrinked .read-analytics {
+		display: none
+	}
+	.read-analytics {
+		display: none
+	}
+	.session-one .text-right {
+		text-align: left!important;
+	}
+	/*  Dashboard */
+	.dashboard-page .score-graph-percentage .col-one,
+	.dashboard-page .score-graph-percentage .col-two,
+	.dashboard-page .score-graph-percentage .col-three,
+	.dashboard-page .score-graph-percentage .col-four,
+	.dashboard-page .score-graph-percentage .col-five {
+		float: left;
+		width: 63px;
+	}
+	.dashboard-page .score-graph .questions,
+	.correct,
+	.near-correct,
+	.incorrect,
+	.not-answered {
+		padding: 2px 2px;
+	}
+	.custom-space {
+		padding-top: 0px;
+	}
+	.dashboard-page .score-graph-percentage .col-two,
+	.dashboard-page .score-graph-percentage .col-three,
+	.dashboard-page .score-graph-percentage .col-four,
+	.dashboard-page .score-graph-percentage .col-five {
+		font-size: 14px;
+	}
+	.dashboard-page .score-graph .questions,
+	.correct,
+	.near-correct,
+	.incorrect,
+	.not-answered {
+		font-size: 9px;
+	}
+	.dashboard-page .score-graph-percentage .col-one,
+	.dashboard-page .score-graph-percentage .col-two,
+	.dashboard-page .score-graph-percentage .col-three,
+	.dashboard-page .score-graph-percentage .col-four,
+	.dashboard-page .score-graph-percentage .col-five {
+		width: 50px;
+	}
+	/*  A2 Session Detail */
+	.A6-session_details .session-one span.time {
+		padding-bottom: 10px;
+		padding-top: 10px;
+	}
+	.A6-session_details span.gery-box {
+		margin-bottom: 10px;
+	}
+	.A6-session_details span.topic {
+		margin-top: 10px
+	}
+	.A6-session_details span.correct-options {
+		margin-bottom: 10px;
+	}
+	#myTab .tab-card-header>.nav-tabs>li {
+		margin-right: 2px;
+		margin-bottom: 5px;
+		margin-top: 5px;
+	}
+	.calender-box-width {
+		width: 100%;
+		float: none;
+		margin-top: 10px;
+	}
+	.custom-select-box .calender-section {
+		width: 100%;
+		float: none;
+		margin: 0px auto;
+	}
+	.custom-select-box .d-w-m-y {
+		margin-top: 10px;
+	}
+	.session-calender-slider #prev1,
+	.session-calender-slider #prev {
+		padding-right: 30px;
+		position: relative;
+		right: 50px;
+		top: 2px;
+	}
+	.session-calender-slider #prev {
+		right: 50px !important
+	}
+	#myTabContent .q4 {
+		margin-bottom: 15px;
+	}
+	/*  A2_session_attendance */
+	.A2_session_attendance .attendance-white-box {
+		margin-top: 15px;
+	}
+	.A2_session_attendance .attendance-white-box .number {
+		font-size: 20px;
+	}
+	.A2_session_attendance .orange-box,
+	.A2_session_attendance .gery-box {
+		margin-top: 10px;
+	}
+	/*  Session */
+	.search-expand {
+		margin-bottom: 15px;
+	}
+	.search-expand input[type=text] {
+		position: relative;
+		left: 0px;
+		top: 0px;
+		z-index: 9;
+	}
+	.search-expand input[type=text]:focus {
+		width: 100%;
+	}
+	.select-box-width.ml-5 {
+		margin-left: 0!important;
+	}
+	.session-page .custom-select-box .calender-section,
+	.performance-page .custom-select-box .calender-section {
+		width: 70%;
+		float: left;
+	}
+	
+	/* Reports Teacher */
+	.reports-teacher .col-one,
+	.reports-teacher .col-two,
+	.reports-teacher .col-three,
+	.reports-teacher .col-four,
+	.reports-teacher .col-five,
+	.reports-teacher .col-six,
+	.reports-teacher .col-seven {
+		width: auto;
+		margin-right: 6px;
+		margin-bottom: 6px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.reports-teacher .mr-0 {
+		margin-right: 6px !important;
+	}
+	.reports-teacher .text-right {
+		text-align: left !important;
+	}
+	#myTabLft .nav-tabs .nav-link.active {
+		padding: 0px 20px;
+		font-size: 12px;
+	}
+	#myTabLft .tab-card-header>.nav-tabs>li>a {
+		padding: 0px 20px;
+		font-size: 12px;
+	}
+	#myTabLft .tab-card-header>.nav-tabs>li {
+		margin-right: 5px;
+		margin-left: 5px;
+		padding-top: 5px;
+	}
+	.reports-teacher .content.mCustomScrollbar {
+		height: auto;
+	}
+	.dashboard-page .read-velocity {
+	    font-size: 20px;
+	}
+	.reports-summary .page-header .text-right{
+	   text-align:center!important;
+	}
+	.reports-summary span.gery-box {
+       margin-left: 0px;
+	   font-size: 14px;
+	   width: 110px;
+	}
+	.reports-summary span.view-detailed-analysis {
+      margin: 10px 0px 0px 0px;
+    }
+	.custom-select-box .select-box-width-lg {
+      margin-bottom: 10px;
+      width: 100%;
+    }
+	.hidden-mobile {
+		display: none
+	}
+	.space-mobile {
+		margin-top: 20px;
+	}
+	.p-l-r {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.p-t-10 {
+		padding-top: 15px !important;
+		padding-bottom: 15px !important;
+	}
+	.border-right {
+		border-right: 0px;
+	}
+	.border-left {
+		border-left: 0px;
+	}
+	.footer-bottom {
+		position: relative;
+		width: auto;
+	}
+	nav.side-navbar a {
+		text-align: left;
+	}
+	.copyright {
+		display: none;
+	}
+	.pl-0,
+	.px-0 {
+		padding-left: 15px !important;
+	}
+	.pr-0,
+	.px-0 {
+		padding-right: 15px !important;
+	}
+}
+
