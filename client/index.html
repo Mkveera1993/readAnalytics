@@ -222,7 +222,7 @@
                         <div class="col-lg-2 col-sm-2 col-12"><small class="questionss">Questions </small></div>
                         <div class="col-lg-10 col-sm-10 col-12 pl-0">
                           <div class="tab-card-header">
-                            <ul class="nav nav-tabs card-header-tabs" role="tablist" ng-init="questionIndex=1">
+                            <ul class="nav nav-tabs card-header-tabs" role="tablist" ng-init="">
                               <li role="presentation" class="active"><a href="#tab1" role="tab" data-toggle="tab"
                                   ng-click="changeQuestion(1)">1</a> </li>
                               <li role="presentation"><a href="#tab2" role="tab" data-toggle="tab" ng-click="changeQuestion(2)">2</a>
@@ -252,7 +252,7 @@
                         <div>
                           <div class="row">
                             <div class="col-lg-2 col-sm-2">
-                              <div class="q4">Q{{questionIndex}}</div>
+                              <div class="q4">Q{{currentQuestion.count?currentQuestion.count:1}}</div>
                             </div>
                             <div class="col-lg-10 col-sm-10">
                               <p>{{currentQuestion.question_path}}</p>

@@ -6,6 +6,7 @@ app.controller('mainController', ['$scope','$rootScope', '$filter',"$window", 'S
 
     $scope.title = "Read Analytics";
     $scope.user={};
+   
 
     
     $scope.currentDate=new Date();  
@@ -67,7 +68,7 @@ app.controller('mainController', ['$scope','$rootScope', '$filter',"$window", 'S
             });
             $scope.currentSessionDetailsQuestions = $scope.currentSessionDetails.questions;
             $scope.questionsAnswers = {};
-            for (var qst of $scope.currentSessionDetailsQuestions) {
+            for (const qst of $scope.currentSessionDetailsQuestions) {
                 $scope.questionsAnswers[qst.question_key] = {
                     "correct_ans": qst.correct_ans,
                     "near_correct": qst.near_correct
@@ -116,7 +117,7 @@ app.controller('mainController', ['$scope','$rootScope', '$filter',"$window", 'S
             });
             $scope.currentSessionDetailsQuestions = $scope.currentSessionDetails.questions;
             $scope.questionsAnswers = {};
-            for (var qst of $scope.currentSessionDetailsQuestions) {
+            for (const qst of $scope.currentSessionDetailsQuestions) {
                 $scope.questionsAnswers[qst.question_key] = {
                     "correct_ans": qst.correct_ans,
                     "near_correct": qst.near_correct
@@ -132,15 +133,18 @@ app.controller('mainController', ['$scope','$rootScope', '$filter',"$window", 'S
         }
 
     });
+
     $scope.$watch('isLogged', function () {
         if ($scope.isLogged) {
             $scope.isLogged=$scope.isLogged;
         }
     });
+    
 
-    $scope.changeQuestion = function (index) {
+    $scope.changeQuestion = function (index) {        
         $scope.currentQuestion = $scope.currentSessionDetailsQuestions[index - 1];
-        $scope.questionIndex = index;
+        $scope.currentQuestion['count'] = index;
+        
     }
     
     
@@ -176,8 +180,8 @@ app.controller('mainController', ['$scope','$rootScope', '$filter',"$window", 'S
         }
         var data=[[],[]];
 
-        for (var key in d) {          
-                var e = d[key];
+        for (const key in d) {          
+                const e = d[key];
                 var prctg1=parseInt((100*e)/totalQsn);
                 var prctg2=parseInt((100*e)/totalQsn*2);
                 data[0].push(prctg1);
@@ -219,9 +223,9 @@ app.controller('mainController', ['$scope','$rootScope', '$filter',"$window", 'S
         var data=[[],[]];
         
         
-        for (var key in d) {    
+        for (const key in d) {    
            var f= Math.floor(Math.random() * 1000)      
-                var e = d[key];
+                const e = d[key];
                 var prctg1=parseInt(e);
                 var prctg2=parseInt(e+(e/2));
                 data[0].push(prctg1);
