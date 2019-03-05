@@ -67,7 +67,7 @@ app.controller('mainController', ['$scope','$rootScope', '$filter',"$window", 'S
             });
             $scope.currentSessionDetailsQuestions = $scope.currentSessionDetails.questions;
             $scope.questionsAnswers = {};
-            for (const qst of $scope.currentSessionDetailsQuestions) {
+            for (var qst of $scope.currentSessionDetailsQuestions) {
                 $scope.questionsAnswers[qst.question_key] = {
                     "correct_ans": qst.correct_ans,
                     "near_correct": qst.near_correct
@@ -116,7 +116,7 @@ app.controller('mainController', ['$scope','$rootScope', '$filter',"$window", 'S
             });
             $scope.currentSessionDetailsQuestions = $scope.currentSessionDetails.questions;
             $scope.questionsAnswers = {};
-            for (const qst of $scope.currentSessionDetailsQuestions) {
+            for (var qst of $scope.currentSessionDetailsQuestions) {
                 $scope.questionsAnswers[qst.question_key] = {
                     "correct_ans": qst.correct_ans,
                     "near_correct": qst.near_correct
@@ -176,8 +176,8 @@ app.controller('mainController', ['$scope','$rootScope', '$filter',"$window", 'S
         }
         var data=[[],[]];
 
-        for (const key in d) {          
-                const e = d[key];
+        for (var key in d) {          
+                var e = d[key];
                 var prctg1=parseInt((100*e)/totalQsn);
                 var prctg2=parseInt((100*e)/totalQsn*2);
                 data[0].push(prctg1);
@@ -219,9 +219,9 @@ app.controller('mainController', ['$scope','$rootScope', '$filter',"$window", 'S
         var data=[[],[]];
         
         
-        for (const key in d) {    
+        for (var key in d) {    
            var f= Math.floor(Math.random() * 1000)      
-                const e = d[key];
+                var e = d[key];
                 var prctg1=parseInt(e);
                 var prctg2=parseInt(e+(e/2));
                 data[0].push(prctg1);
