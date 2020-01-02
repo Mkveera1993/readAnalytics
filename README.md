@@ -1,5 +1,5 @@
 # readAnalytics<br>
-For Gumbi Softwares<br>
+sample analytics App<br>
 
 Welcome to the readAnalytics wiki!<br>
 
